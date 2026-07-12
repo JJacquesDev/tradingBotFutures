@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]  
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "strating-bot"              
+version = "0.1.0"
+description = "Smart trading bot to operate automatically on futures financial market"
+authors = [
+  { name = "Jean-Jacques BABIN-DAMANA", email = "babinjeanjacques@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "click>=8.0",       
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "mypy"]
+
+[project.scripts]
+strading-bot = "strading_bot.main_app:main"  
+
+[tool.black]        
+line-length = 88
+target-version = ['py38'] 
+
+[tool.mypy]		
+strict = true
+
+[tool.pytest.ini_options] 
+testpaths = ["tests"]
